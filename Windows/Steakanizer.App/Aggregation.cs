@@ -31,14 +31,39 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 
-namespace LiveCameraSample
+using System.Linq;
+using Microsoft.ProjectOxford.Face.Contract;
+using Microsoft.ProjectOxford.Common.Contract;
+using System;
+using System.Collections.Generic;
+
+namespace Steakanizer
 {
-    // Class to hold all possible result types. 
-    public class LiveCameraResult
+    internal class Aggregation
     {
-        public Microsoft.ProjectOxford.Face.Contract.Face[] Faces { get; set; } = null;
-        public Microsoft.ProjectOxford.Common.Contract.EmotionScores[] EmotionScores { get; set; } = null;
-        public string[] CelebrityNames { get; set; } = null;
-        public Microsoft.ProjectOxford.Vision.Contract.Tag[] Tags { get; set; } = null;
+        public static Tuple<string, float> GetDominantEmotion(EmotionScores scores)
+        {
+            return scores.ToRankedList().Select(kv => new Tuple<string, float>(kv.Key, kv.Value)).First();
+        }
+
+        public static string SummarizeEmotion(EmotionScores scores)
+        {
+            var bestEmotion = Aggregation.GetDominantEmotion(scores);
+            return string.Format("{0}: {1:N1}", bestEmotion.Item1, bestEmotion.Item2);
+        }
+
+        public static string SummarizeFaceAttributes(FaceAttributes attr)
+        {
+            List<string> attrs = new List<string>();
+            if (attr.Gender != null) attrs.Add(attr.Gender);
+            if (attr.Age > 0) attrs.Add(attr.Age.ToString());
+            if (attr.HeadPose != null)
+            {
+                // Simple rule to estimate whether person is facing camera. 
+                bool facing = Math.Abs(attr.HeadPose.Yaw) < 25;
+                attrs.Add(facing ? "facing camera" : "not facing camera");
+            }
+            return string.Join(", ", attrs);
+        }
     }
 }

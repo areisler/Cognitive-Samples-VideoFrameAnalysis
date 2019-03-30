@@ -33,22 +33,22 @@
 
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Microsoft.ProjectOxford.Vision.Contract;
+using System.Windows;
 
-namespace LiveCameraSample
+namespace Steakanizer
 {
-    public class CelebritiesResult
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
     {
-        public Celebrity[] Celebrities { get; set; }
-    }
-
-    public class Celebrity
-    {
-        public string Name { get; set; }
-        public FaceRectangle FaceRectangle { get; set; }
-        public float Confidence { get; set; }
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            Steakanizer.Properties.Settings.Default.Save();
+        }
     }
 }

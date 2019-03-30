@@ -8,45 +8,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LiveCameraSample.Properties {
-
-
+namespace Steakanizer.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
+        
         public static Settings Default {
             get {
                 return defaultInstance;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string FaceAPIKey {
+        public string CustomVisionAPIKey {
             get {
-                return ((string)(this["FaceAPIKey"]));
+                return ((string)(this["CustomVisionAPIKey"]));
             }
             set {
-                this["FaceAPIKey"] = value;
+                this["CustomVisionAPIKey"] = value;
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string VisionAPIKey {
-            get {
-                return ((string)(this["VisionAPIKey"]));
-            }
-            set {
-                this["VisionAPIKey"] = value;
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Visible")]
@@ -58,7 +46,7 @@ namespace LiveCameraSample.Properties {
                 this["SettingsPanelVisibility"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("00:00:03")]
@@ -70,31 +58,19 @@ namespace LiveCameraSample.Properties {
                 this["AnalysisInterval"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FaceAPICallCount {
+        public int CustomVisionAPICallCount {
             get {
-                return ((int)(this["FaceAPICallCount"]));
+                return ((int)(this["CustomVisionAPICallCount"]));
             }
             set {
-                this["FaceAPICallCount"] = value;
+                this["CustomVisionAPICallCount"] = value;
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int VisionAPICallCount {
-            get {
-                return ((int)(this["VisionAPICallCount"]));
-            }
-            set {
-                this["VisionAPICallCount"] = value;
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
@@ -106,7 +82,7 @@ namespace LiveCameraSample.Properties {
                 this["AutoStopEnabled"] = value;
             }
         }
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("00:05:00")]
@@ -115,28 +91,16 @@ namespace LiveCameraSample.Properties {
                 return ((global::System.TimeSpan)(this["AutoStopTime"]));
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://westus.api.cognitive.microsoft.com/face/v1.0")]
-        public string FaceAPIHost {
-            get {
-                return ((string)(this["FaceAPIHost"]));
-            }
-            set {
-                this["FaceAPIHost"] = value;
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://westus.api.cognitive.microsoft.com/vision/v1.0")]
-        public string VisionAPIHost {
+        public string CustomVisionAPI {
             get {
-                return ((string)(this["VisionAPIHost"]));
+                return ((string)(this["CustomVisionAPI"]));
             }
             set {
-                this["VisionAPIHost"] = value;
+                this["CustomVisionAPI"] = value;
             }
         }
     }

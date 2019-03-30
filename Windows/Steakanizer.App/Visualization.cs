@@ -44,7 +44,7 @@ using Microsoft.ProjectOxford.Common.Contract;
 using FaceAPI = Microsoft.ProjectOxford.Face.Contract;
 using Microsoft.ProjectOxford.Vision.Contract;
 
-namespace LiveCameraSample
+namespace Steakanizer
 {
     public class Visualization
     {
