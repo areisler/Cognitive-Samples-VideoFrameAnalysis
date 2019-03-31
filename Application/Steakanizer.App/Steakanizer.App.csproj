@@ -101,12 +101,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Aggregation.cs" />
-    <Compile Include="CelebritiesResult.cs" />
     <Compile Include="LiveCameraResult.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Settings1.cs" />
-    <Compile Include="Visualization.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -147,11 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\haarcascade_frontalface_alt2.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoFrameAnalyzer\VideoFrameAnalyzer.csproj">
