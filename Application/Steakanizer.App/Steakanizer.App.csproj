@@ -101,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CookingDegree.cs" />
+    <Compile Include="CookingDegrees.cs" />
+    <Compile Include="CookingDegreeTypes.cs" />
+    <Compile Include="Filet.cs" />
     <Compile Include="LiveCameraResult.cs" />
     <Compile Include="Settings.cs" />
     <Page Include="MainWindow.xaml">

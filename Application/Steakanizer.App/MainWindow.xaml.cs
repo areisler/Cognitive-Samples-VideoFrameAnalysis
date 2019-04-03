@@ -21,6 +21,7 @@ namespace Steakanizer
     {
         private readonly FrameGrabber<LiveCameraResult> _grabber;
         private DateTime _startTime;
+        private CookingDegrees _cookingDegrees;
 
         public MainWindow()
         {
@@ -31,6 +32,7 @@ namespace Steakanizer
             // Create API client 
             //_visionClient = new VisionAPI.VisionServiceClient(Properties.Settings.Default.CustomVisionAPIKey, Properties.Settings.Default.CustomVisionAPI);
 
+            _cookingDegrees = new CookingDegrees();
         }
 
         private FrameGrabber<LiveCameraResult> SetupVideoFrameGrabber()
@@ -78,6 +80,9 @@ namespace Steakanizer
                 {
                     /// TODO: Analyse ausgeben
                     /// args.Analysis;
+                    /// 
+
+                    // var filetCookingDegrees = _cookingDegrees.Filet.CookingTimeByThickness(args.Analysis.Thickness)
                 }
             }));
         }
@@ -98,7 +103,7 @@ namespace Steakanizer
 
             return new LiveCameraResult
             {
-                // TODO: Analyseergebnis zurückgeben...
+                // TODO: Analyseergebnis zurückgeben...                
             };
         }
 
